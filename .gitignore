@@ -1,0 +1,23 @@
+# --- Data (large file, download separately — see README) ---
+online+retail+ii/
+*.xlsx
+*.zip
+
+# --- Windows metadata (NTFS alternate data streams) ---
+*Zone.Identifier
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.ipynb_checkpoints
+
+# --- OS / editor ---
+.DS_Store
+.vscode/
+.idea/
