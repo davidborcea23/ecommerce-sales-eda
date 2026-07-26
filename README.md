@@ -53,8 +53,7 @@ jupyter notebook eda.ipynb
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| `eda.ipynb` | The full exploratory analysis |
-| `requirements.txt` | Python dependencies |
-| `.gitignore` | Excludes the dataset and local artifacts |
+- `eda.ipynb` — the full exploratory analysis
+- `sql/queries.sql` — the same dataset analysed in SQL
+- `requirements.txt` — Python dependencies
+- `.gitignore` — excludes the dataset and local artifacts
