@@ -39,6 +39,28 @@ top customers).
 - Part of the top "revenue" comes from **shipping/postage**, not goods.
 - A large share of transactions has **no `Customer ID`**, which limits customer-level analysis.
 
+## SQL analysis
+
+The same dataset was loaded into SQLite and analysed with SQL, as a counterpart to the
+pandas exploration above. Queries are in `sql/queries.sql`, covering aggregation,
+conditional counting, subqueries and window functions (`RANK` with `PARTITION BY`,
+running totals, `LAG`).
+
+The database is built from the same `.xlsx`, adding a `Revenue` column and renaming
+`Customer ID` to `CustomerID`; it is not committed (see `.gitignore`).
+
+Selected findings:
+
+- **Revenue is strongly seasonal.** Monthly revenue grows from ~854k in September 2010
+  to ~1.42M in November, then drops — the last month is partial, not a decline.
+- **Cancellation rates vary widely by country.** Germany cancels 32% of invoices against
+  15% for the UK, measured at invoice level rather than per product line.
+- **The dataset is effectively UK plus noise.** The UK accounts for 4,035 of the distinct
+  customers; no other country exceeds 70.
+- **Average order value is ~425**, after excluding cancellations and adjustment invoices.
+- **125 customers bought only in the first month and never returned** — under 3% of the
+  customer base, which is the population a churn model has to identify.
+
 ## How to run
 
 ```bash
